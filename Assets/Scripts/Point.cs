@@ -5,6 +5,8 @@ using TMPro;
 public class Point : MonoBehaviour
 {   
     private TextMeshProUGUI Points;
+
+    public float totalPoints;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,8 +16,18 @@ public class Point : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float totalPoints=Score.points;
+        totalPoints=Score.points;
 
         Points.text="Points :"+totalPoints;
     }
+    public void SavePoints(){
+        PlayerPrefs.SetFloat("Points",Score.points);
+    }
+    public void LoadPoints(){
+       Score.points=PlayerPrefs.GetFloat("Points");
+    }
+    public void ResetPoints(){
+        PlayerPrefs.SetFloat("Points",0);
+    }
+
 }

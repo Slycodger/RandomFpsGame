@@ -12,12 +12,10 @@ public class FullAuto : MonoBehaviour
 
     private float Fr;
 
-    private Ammo ammo;
-
+    public Ammo ammo;
     // Start is called before the first frame update
     void Start()
     {
-        ammo=GameObject.Find("GameManager").GetComponent<Ammo>();
     }
 
     // Update is called once per frame

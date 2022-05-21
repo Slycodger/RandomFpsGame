@@ -15,8 +15,10 @@ public class Ammo : MonoBehaviour
 
     public Score enemiesShot;
 
-    private float enemies30=30;
+    public float enemiesForMag=30;
     public TextMeshProUGUI ammoCount;
+
+    public float OgEnemiesForMag;
 
     // Start is called before the first frame update
     void Start()
@@ -37,14 +39,24 @@ public class Ammo : MonoBehaviour
             HaveAmmo=false;
         }
         }
+        if(SemiAuto){
+            Fr-=Time.deltaTime*60;
+            if(Input.GetMouseButtonDown(0)&&Fr<0&&HaveAmmo){
+                Fr=FireRate;
+                ammo--;
+            }
+            if(ammo<0){
+                HaveAmmo=false;
+            }
+        }
         ammoCount.text="Ammo :"+ammo+"X"+mags;
         if(Input.GetKeyDown(KeyCode.R)&&mags>0){
             ammo=AmmoToShoot;
             mags--;
         }
-        if(enemiesShot.AddScore>enemies30){
+        if(enemiesShot.AddScore>enemiesForMag){
             mags++;
-            enemies30+=30;
+            enemiesForMag+=OgEnemiesForMag;
 
         }
     }

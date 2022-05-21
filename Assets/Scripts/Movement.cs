@@ -21,12 +21,14 @@ public class Movement : MonoBehaviour
     {
         Cursor.visible=false;
         rb=GetComponent<Rigidbody>();
-        stopShoot=GameObject.Find("GameManager").GetComponent<Ammo>();
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+       if(Gameover){
+           gameover.SetActive(true);
+       } 
        if(!Gameover){ 
        float mouseX = Input.GetAxis("Mouse X")*Time.deltaTime*sensitivity;
        float mouseY = Input.GetAxis("Mouse Y")*Time.deltaTime*sensitivity;
