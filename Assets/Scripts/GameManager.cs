@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour
 
     public bool BulletCollision;
     public int BulletAtOnce;
+
+    public bool LoseWhenTouched;
+    public bool ShootAtPlayer;
+    public int PointsFromEnemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +38,9 @@ public class GameManager : MonoBehaviour
     }
     public void MidShootPractice(){
         SceneManager.LoadScene(4);
+    }
+    public void CloseRangePractice(){
+        SceneManager.LoadScene(5);
     }
     public void Reset(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

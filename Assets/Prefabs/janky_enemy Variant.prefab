@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &15440864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 15440865}
+  m_Layer: 0
+  m_Name: Rot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &15440865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15440864}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.2, y: 0.1, z: 65.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8741111070279106693}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &214249018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 214249019}
+  m_Layer: 0
+  m_Name: Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &214249019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214249018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.6, y: 0, z: 58.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8741111070279106693}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &9134447151697749870
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25,15 +85,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e237999a00ad00b49896a6fbc92df018, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 42.69
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e237999a00ad00b49896a6fbc92df018, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.27
+      value: 2.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e237999a00ad00b49896a6fbc92df018, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: -33.09
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e237999a00ad00b49896a6fbc92df018, type: 3}
       propertyPath: m_LocalRotation.w
@@ -69,7 +129,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 6fcc1b5394d739049bc5e800bea9366f, type: 2}
     - target: {fileID: 919132149155446097, guid: e237999a00ad00b49896a6fbc92df018, type: 3}
       propertyPath: m_Name
-      value: janky_enemy Variant
+      value: janky_enemy Variant (1)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e237999a00ad00b49896a6fbc92df018, type: 3}
       propertyPath: m_TagString
@@ -80,6 +140,11 @@ PrefabInstance:
 --- !u!1 &8216107889073904191 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e237999a00ad00b49896a6fbc92df018, type: 3}
+  m_PrefabInstance: {fileID: 9134447151697749870}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8741111070279106693 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e237999a00ad00b49896a6fbc92df018, type: 3}
   m_PrefabInstance: {fileID: 9134447151697749870}
   m_PrefabAsset: {fileID: 0}
 --- !u!54 &-4099539094840671618
@@ -98,7 +163,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &6274011265820367192
+--- !u!65 &3365462706719229847
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,3 +189,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 800
+  bulletToShoot: {fileID: 8976920937841783073, guid: 8a7e63dc77b637c4185ed1f44cdbbc6b, type: 3}
+  PlaceOfShot: {fileID: 214249018}
+  RotationWand: {fileID: 15440864}
+--- !u!65 &6274011265820367192
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8216107889073904191}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 43.5, y: 78.7, z: 59.5}
+  m_Center: {x: -6.6, y: 1.1, z: 101.22}

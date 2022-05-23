@@ -7,6 +7,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] SpotsToSpawn;
     public GameObject enemy;
 
+    public int AmountOfEnemiesOnScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class SpawnManager : MonoBehaviour
     void Update()
     {
         var Enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if(Enemies.Length<1){
+        if(Enemies.Length<=AmountOfEnemiesOnScreen){
             Instantiate(enemy,SpotsToSpawn[RandomPositionForYou()].transform.position,enemy.transform.rotation);
         }
     }

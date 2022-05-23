@@ -51,7 +51,7 @@ public class BulletGoForward : MonoBehaviour
         
         if(other.gameObject.CompareTag("Enemy")){
             Destroy(other.gameObject.gameObject);
-            AddScore.ScoreUp(1);
+            AddScore.ScoreUp(GM.PointsFromEnemy);
         }
     }
 

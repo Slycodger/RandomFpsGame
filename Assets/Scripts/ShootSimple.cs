@@ -15,6 +15,7 @@ public class ShootSimple : MonoBehaviour
 
     public Ammo ammo;
     private GameManager GM;
+    public Movement player;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,7 @@ public class ShootSimple : MonoBehaviour
     void Update()
     {   
         fr-=Time.deltaTime*60;
-        if(Input.GetMouseButtonDown(0)&&fr<=0&&ammo.HaveAmmo){
+        if(Input.GetMouseButtonDown(0)&&fr<=0&&ammo.HaveAmmo&&!player.Gameover){
             for(int i=0; i <GM.BulletAtOnce;i++){
                 Instantiate(bulletToShoot,PlaceOfShot.transform.position,RotationWand.transform.rotation);
             }

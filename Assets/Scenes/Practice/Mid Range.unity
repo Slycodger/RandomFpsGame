@@ -726,6 +726,7 @@ MonoBehaviour:
   bulletToShoot: {fileID: 8976920937841783073, guid: 8a7e63dc77b637c4185ed1f44cdbbc6b, type: 3}
   RateOfFire: 10
   ammo: {fileID: 1325927943}
+  player: {fileID: 1325927939}
 --- !u!114 &497841641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1594,6 +1595,9 @@ MonoBehaviour:
   speedOfShot: 50
   BulletCollision: 0
   BulletAtOnce: 1
+  LoseWhenTouched: 0
+  ShootAtPlayer: 0
+  PointsFromEnemy: 5
 --- !u!1 &1053476687
 GameObject:
   m_ObjectHideFlags: 0
@@ -2275,6 +2279,7 @@ MonoBehaviour:
   - {fileID: 1053476687}
   - {fileID: 1077910316}
   enemy: {fileID: 8216107889073904191, guid: 7fc0a36af39ee9645bab9d4f06984f63, type: 3}
+  AmountOfEnemiesOnScreen: 0
 --- !u!1 &1325927938
 GameObject:
   m_ObjectHideFlags: 0
@@ -2379,9 +2384,9 @@ MonoBehaviour:
   HaveAmmo: 1
   mags: 0
   enemiesShot: {fileID: 1965170439}
-  enemiesForMag: 4
+  enemiesForMag: 35
   ammoCount: {fileID: 1206625384}
-  OgEnemiesForMag: 5
+  OgEnemiesForMag: 36
 --- !u!1 &1403218369
 GameObject:
   m_ObjectHideFlags: 0
