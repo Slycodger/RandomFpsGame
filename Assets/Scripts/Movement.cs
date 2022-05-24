@@ -16,6 +16,7 @@ public class Movement : MonoBehaviour
     public GameObject gameover;
     public Ammo stopShoot;
     public bool Gameover;
+    public GameObject escape;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +45,7 @@ public class Movement : MonoBehaviour
        rb.AddRelativeForce(Vector3.right*Time.deltaTime*speed*Input.GetAxis("Horizontal"),ForceMode.Force);
 
        if(Input.GetKey(KeyCode.LeftShift)){
-           speed=100000f;
+           speed=200000f;
         } else{
                speed=50000f;
            }
@@ -59,9 +60,16 @@ public class Movement : MonoBehaviour
             Gameover=true;
             Cursor.visible=true;
        }
+       if(Input.GetKey(KeyCode.Escape)){
+           escape.gameObject.SetActive(true);
+       }
        }
     }
     private void OnCollisionEnter(Collision other) {
         grounded=false;
     }
+    public void resume(){
+    escape.gameObject.SetActive(false);
+        Cursor.visible=false;
+}
 }

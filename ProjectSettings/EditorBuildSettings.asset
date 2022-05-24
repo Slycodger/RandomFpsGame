@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Practice/Close Range.unity
     guid: 64de2d8915894c044a6a5d0b6fb8a103
+  - enabled: 1
+    path: Assets/Scenes/Practice/Run'n'Gun.unity
+    guid: 31d4934ed0c5a224091ef1463025e09e
   m_configObjects: {}

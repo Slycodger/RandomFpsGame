@@ -16,6 +16,9 @@ public class ShootSimple : MonoBehaviour
     public Ammo ammo;
     private GameManager GM;
     public Movement player;
+
+    public bool AreYouFullAuto;
+    public bool AreYouSemiAuto;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +29,30 @@ public class ShootSimple : MonoBehaviour
     void Update()
     {   
         fr-=Time.deltaTime*60;
-        if(Input.GetMouseButtonDown(0)&&fr<=0&&ammo.HaveAmmo&&!player.Gameover){
-            for(int i=0; i <GM.BulletAtOnce;i++){
+
+        if(AreYouFullAuto){
+            FullAuto();
+        }
+        if(AreYouSemiAuto){
+            SemiAuto();
+        }
+    }
+    
+    private void FullAuto(){
+        if(Input.GetMouseButton(0)&&ammo.HaveAmmo&&!player.Gameover&&fr<=0){
+            for(int i = 0;i<=GM.BulletAtOnce;i++){
                 Instantiate(bulletToShoot,PlaceOfShot.transform.position,RotationWand.transform.rotation);
             }
             fr=RateOfFire;
         }
     }
+    private void SemiAuto(){
+        if(Input.GetMouseButtonDown(0)&&ammo.HaveAmmo&&!player.Gameover&&fr<=0){
+            for(int i = 0;i<=GM.BulletAtOnce;i++){
+                Instantiate(bulletToShoot,PlaceOfShot.transform.position,RotationWand.transform.rotation);
+            }
+            fr=RateOfFire;
+        }
+    }
+
 }

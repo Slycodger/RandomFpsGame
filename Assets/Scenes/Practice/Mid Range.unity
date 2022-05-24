@@ -402,7 +402,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1014250384}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: Back
         m_Mode: 1
@@ -727,6 +727,8 @@ MonoBehaviour:
   RateOfFire: 10
   ammo: {fileID: 1325927943}
   player: {fileID: 1325927939}
+  AreYouFullAuto: 0
+  AreYouSemiAuto: 1
 --- !u!114 &497841641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1391,8 +1393,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1014250384}
-        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+      - m_Target: {fileID: 1325927939}
+        m_TargetAssemblyTypeName: Movement, Assembly-CSharp
         m_MethodName: resume
         m_Mode: 1
         m_Arguments:
@@ -1542,7 +1544,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1014250383}
   - component: {fileID: 1014250385}
-  - component: {fileID: 1014250384}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1564,19 +1565,6 @@ Transform:
   m_Father: {fileID: 1902807924}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1014250384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1014250382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0870502cb18f0ce45b04d38d649bece4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  escape: {fileID: 1403218369}
 --- !u!114 &1014250385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1597,7 +1585,21 @@ MonoBehaviour:
   BulletAtOnce: 1
   LoseWhenTouched: 0
   ShootAtPlayer: 0
-  PointsFromEnemy: 5
+  PointsFromEnemy: 6
+  SpotsToSpawn:
+  - {fileID: 1748037850}
+  - {fileID: 771583932}
+  - {fileID: 494594951}
+  - {fileID: 818932666}
+  - {fileID: 1343893}
+  - {fileID: 712443425}
+  - {fileID: 1176059949}
+  - {fileID: 179508393}
+  - {fileID: 1053476687}
+  - {fileID: 1077910316}
+  enemy: {fileID: 8216107889073904191, guid: 7fc0a36af39ee9645bab9d4f06984f63, type: 3}
+  AmountOfEnemiesOnScreen: 1
+  SpawnEnemies: 1
 --- !u!1 &1053476687
 GameObject:
   m_ObjectHideFlags: 0
@@ -1789,9 +1791,9 @@ RectTransform:
   m_Father: {fileID: 1502097651}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -837, y: -364}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -96, y: 77}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1206625384
@@ -2224,62 +2226,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228286270}
   m_CullTransparentMesh: 1
---- !u!1 &1256260096
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1256260097}
-  - component: {fileID: 1256260098}
-  m_Layer: 0
-  m_Name: SpawnManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1256260097
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1256260096}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 115.11369, y: 204.70824, z: -38.972855}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1902807924}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1256260098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1256260096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37cd9aee475bb3a41b51920214692996, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpotsToSpawn:
-  - {fileID: 1748037850}
-  - {fileID: 771583932}
-  - {fileID: 494594951}
-  - {fileID: 818932666}
-  - {fileID: 1343893}
-  - {fileID: 712443425}
-  - {fileID: 1176059949}
-  - {fileID: 179508393}
-  - {fileID: 1053476687}
-  - {fileID: 1077910316}
-  enemy: {fileID: 8216107889073904191, guid: 7fc0a36af39ee9645bab9d4f06984f63, type: 3}
-  AmountOfEnemiesOnScreen: 0
 --- !u!1 &1325927938
 GameObject:
   m_ObjectHideFlags: 0
@@ -2320,6 +2266,7 @@ MonoBehaviour:
   gameover: {fileID: 1224778469}
   stopShoot: {fileID: 1325927943}
   Gameover: 0
+  escape: {fileID: 1403218369}
 --- !u!65 &1325927940
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2911,8 +2858,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1014250384}
-        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+      - m_Target: {fileID: 1014250385}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: Back
         m_Mode: 1
         m_Arguments:
@@ -2989,7 +2936,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1014250383}
-  - {fileID: 1256260097}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3026,9 +2972,9 @@ RectTransform:
   m_Father: {fileID: 1502097651}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -687, y: 326}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 118, y: -32}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1965170439
