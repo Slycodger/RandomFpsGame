@@ -8,7 +8,6 @@ public class GoTowardsPlayer : MonoBehaviour
 
     private GameManager gm;
     private Rigidbody rb;
-    public float speed;
 
     private Movement player;
 
@@ -32,7 +31,7 @@ public class GoTowardsPlayer : MonoBehaviour
          lookVector.y = transform.position.y;
          Quaternion rot = Quaternion.LookRotation(lookVector);
          transform.rotation = Quaternion.Slerp(transform.rotation, rot, 1);
-         rb.AddRelativeForce(-Vector3.up*speed*Time.deltaTime);
+         rb.AddRelativeForce(Vector3.down*gm.SpeedTowardsPlayer*Time.deltaTime);
         }
 
     }

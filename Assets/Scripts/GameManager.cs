@@ -17,21 +17,48 @@ public class GameManager : MonoBehaviour
     public int PointsFromEnemy;
     public GameObject[] SpotsToSpawn;
     public GameObject enemy;
+    public bool RespawnEnemies;
+    public int PointsFromCompletion;
 
     public int AmountOfEnemiesOnScreen;
     public bool SpawnEnemies;
+    private Score AddScore;
+
+    private int AOEOS = 0;
+    public int OGAOEOS;
+    private bool SpawnedEnemies=false;
+    public int AmountShot;
+    private bool PointAdded= false;
+    public float NormalSpeed;
+    public float SprintSpeed;
+    public float SpeedTowardsPlayer;
     // Start is called before the first frame update
     void Start()
     {
+        OGAOEOS=AmountOfEnemiesOnScreen;
+        AddScore=GameObject.Find("Score").GetComponent<Score>();
     }
 
     // Update is called once per frame
     void Update()
     {   
         if(SpawnEnemies){
-        var Enemies =GameObject.FindGameObjectsWithTag("Enemy");
-        if(Enemies.Length<=AmountOfEnemiesOnScreen){
+        var Enemies=GameObject.FindGameObjectsWithTag("Enemy");
+        if(Enemies.Length<=AmountOfEnemiesOnScreen&&RespawnEnemies){
             Instantiate(enemy,SpotsToSpawn[RandomPositionForYou()].transform.position,enemy.transform.rotation);
+            SpawnedEnemies=true;
+        }else if(Enemies.Length<=AmountOfEnemiesOnScreen&&!RespawnEnemies&&OGAOEOS>=AOEOS){
+            Instantiate(enemy,SpotsToSpawn[RandomPositionForYou()].transform.position,enemy.transform.rotation);
+            AOEOS++;
+            SpawnedEnemies=true;
+        }
+        if(!RespawnEnemies){
+            if(AmountShot>=OGAOEOS+1&&!PointAdded){
+                AddScore.ScoreUp(PointsFromCompletion);
+                AmountShot=0;
+                AOEOS=0;
+            }
+            
         }
     }
 

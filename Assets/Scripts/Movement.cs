@@ -17,11 +17,14 @@ public class Movement : MonoBehaviour
     public Ammo stopShoot;
     public bool Gameover;
     public GameObject escape;
+    private GameManager GM;
     // Start is called before the first frame update
     void Start()
     {
         Cursor.visible=false;
         rb=GetComponent<Rigidbody>();
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -29,6 +32,8 @@ public class Movement : MonoBehaviour
     {   
        if(Gameover){
            gameover.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
        } 
        if(!Gameover){ 
        float mouseX = Input.GetAxis("Mouse X")*Time.deltaTime*sensitivity;
@@ -45,9 +50,9 @@ public class Movement : MonoBehaviour
        rb.AddRelativeForce(Vector3.right*Time.deltaTime*speed*Input.GetAxis("Horizontal"),ForceMode.Force);
 
        if(Input.GetKey(KeyCode.LeftShift)){
-           speed=200000f;
+                speed = GM.SprintSpeed;
         } else{
-               speed=50000f;
+                speed = GM.NormalSpeed;
            }
        if(Input.GetKeyDown(KeyCode.Space)&&!grounded){
            grounded=true;
@@ -60,8 +65,10 @@ public class Movement : MonoBehaviour
             Gameover=true;
             Cursor.visible=true;
        }
-       if(Input.GetKey(KeyCode.Escape)){
+       if(Input.GetKey(KeyCode.M)){
            escape.gameObject.SetActive(true);
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
        }
        }
     }
@@ -70,6 +77,8 @@ public class Movement : MonoBehaviour
     }
     public void resume(){
     escape.gameObject.SetActive(false);
-        Cursor.visible=false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        
 }
 }

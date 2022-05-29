@@ -3062,7 +3062,7 @@ MonoBehaviour:
   GoTowardsPlayer: 1
   Snipe: 0
   NoScope: 1
-  speedOfShot: 10
+  speedOfShot: 5
   BulletCollision: 0
   BulletAtOnce: 1
   LoseWhenTouched: 1
@@ -3079,8 +3079,15 @@ MonoBehaviour:
   - {fileID: 1654783526}
   - {fileID: 1130391157}
   enemy: {fileID: 8216107889073904191, guid: 7fc0a36af39ee9645bab9d4f06984f63, type: 3}
-  AmountOfEnemiesOnScreen: 2
+  RespawnEnemies: 1
+  PointsFromCompletion: 50
+  AmountOfEnemiesOnScreen: 1
   SpawnEnemies: 1
+  OGAOEOS: 0
+  AmountShot: 0
+  NormalSpeed: 25000
+  SprintSpeed: 50000
+  SpeedTowardsPlayer: 800
 --- !u!1 &1764807571
 GameObject:
   m_ObjectHideFlags: 0

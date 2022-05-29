@@ -1577,7 +1577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3619ad3b82fed341856daa2905f2c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GoTowardsPlayer: 0
+  GoTowardsPlayer: 1
   Snipe: 0
   NoScope: 1
   speedOfShot: 50
@@ -1585,7 +1585,7 @@ MonoBehaviour:
   BulletAtOnce: 1
   LoseWhenTouched: 0
   ShootAtPlayer: 0
-  PointsFromEnemy: 6
+  PointsFromEnemy: 5
   SpotsToSpawn:
   - {fileID: 1748037850}
   - {fileID: 771583932}
@@ -1598,8 +1598,15 @@ MonoBehaviour:
   - {fileID: 1053476687}
   - {fileID: 1077910316}
   enemy: {fileID: 8216107889073904191, guid: 7fc0a36af39ee9645bab9d4f06984f63, type: 3}
+  RespawnEnemies: 1
+  PointsFromCompletion: 0
   AmountOfEnemiesOnScreen: 1
   SpawnEnemies: 1
+  OGAOEOS: 0
+  AmountShot: 0
+  NormalSpeed: 60000
+  SprintSpeed: 105000
+  SpeedTowardsPlayer: 0
 --- !u!1 &1053476687
 GameObject:
   m_ObjectHideFlags: 0

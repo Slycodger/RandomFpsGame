@@ -11,6 +11,7 @@ public class BulletGoForward : MonoBehaviour
     private GameManager GM;
 
     private int BulletNoCollision;
+    
     // Start is called before the first frame update
     void Start()
     {   
@@ -31,7 +32,7 @@ public class BulletGoForward : MonoBehaviour
             rb.useGravity=false;
         }
         if(GM.Snipe){
-        rb.AddRelativeForce(Vector3.forward*GM.speedOfShot);
+        rb.AddRelativeForce(Vector3.forward*GM.speedOfShot,ForceMode.Impulse);
         }
         if(GM.NoScope){
             rb.AddRelativeForce(Vector3.forward*GM.speedOfShot,ForceMode.Impulse);
@@ -43,6 +44,7 @@ public class BulletGoForward : MonoBehaviour
         if(GM.BulletCollision){
             gameObject.layer=BulletNoCollision;
         }
+        
     }
     private void OnCollisionEnter(Collision other) {
         if(rb.velocity.z>0){
@@ -52,7 +54,9 @@ public class BulletGoForward : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy")){
             Destroy(other.gameObject.gameObject);
             AddScore.ScoreUp(GM.PointsFromEnemy);
+            GM.AmountShot++;
         }
+
     }
 
     public void destroyBullet(){

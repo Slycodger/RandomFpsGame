@@ -610,9 +610,12 @@ MonoBehaviour:
   PointsFromEnemy: 0
   SpotsToSpawn: []
   enemy: {fileID: 0}
+  RespawnEnemies: 0
+  PointsFromCompletion: 0
   AmountOfEnemiesOnScreen: 0
   SpawnEnemies: 0
-  escape: {fileID: 0}
+  OGAOEOS: 0
+  AmountShot: 0
 --- !u!1 &1228108694
 GameObject:
   m_ObjectHideFlags: 0
