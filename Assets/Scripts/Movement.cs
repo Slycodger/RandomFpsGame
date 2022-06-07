@@ -30,6 +30,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
+
+
        if(Gameover){
            gameover.SetActive(true);
             Cursor.lockState = CursorLockMode.None;

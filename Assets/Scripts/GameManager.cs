@@ -84,6 +84,10 @@ public class GameManager : MonoBehaviour
     public void RunNGun(){
         SceneManager.LoadScene(6);
     }
+    public void Shop()
+    {
+        SceneManager.LoadScene(7);
+    }
     public void Reset(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

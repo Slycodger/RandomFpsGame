@@ -18,13 +18,14 @@ public class Point : MonoBehaviour
     {
         totalPoints=Score.points;
 
-        Points.text="Points :"+totalPoints;
+        Points.text="Points :"+PlayerPrefs.GetFloat("Points");
     }
     public void SavePoints(){
         PlayerPrefs.SetFloat("Points",Score.points);
     }
-    public void LoadPoints(){
-       Score.points=PlayerPrefs.GetFloat("Points");
+    public void LoadPoints()
+    {
+        Score.points = PlayerPrefs.GetFloat("Points");
     }
     public void ResetPoints(){
         PlayerPrefs.SetFloat("Points",0);

@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Practice/Run'n'Gun.unity
     guid: 31d4934ed0c5a224091ef1463025e09e
+  - enabled: 1
+    path: Assets/Scenes/Practice/Shop.unity
+    guid: 434175dcba6b7284bb4170debee7f7f2
   m_configObjects: {}
