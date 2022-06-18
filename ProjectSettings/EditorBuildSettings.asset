@@ -6,27 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu/Main Menu.unity
-    guid: 6512f8ddf344efd43aafd8b2a05d7540
+    path: Assets/Scenes/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/Menu/Practice Menu.unity
-    guid: a381ee04027447b41895a23931ab4202
+    path: Assets/Scenes/Scene(1).unity
+    guid: 97dab2774a0772c4bad14be08bbb6ff7
   - enabled: 1
-    path: Assets/Scenes/Practice/Machine Gun.unity
-    guid: 7580030999ec62d4c9f6db32d63c0bbb
+    path: Assets/Scenes/Scene(2).unity
+    guid: 513b6aac6721a654f920bf2232928c03
   - enabled: 1
-    path: Assets/Scenes/Practice/Sniper.unity
-    guid: 9335647eb447ac44da1c5cd2a59d8661
+    path: Assets/Scenes/Scene(3).unity
+    guid: 63672782116c9fe499a7b727ccf67cde
   - enabled: 1
-    path: Assets/Scenes/Practice/Mid Range.unity
-    guid: bb791b2f96826834a989873c7f0c95f1
-  - enabled: 1
-    path: Assets/Scenes/Practice/Close Range.unity
-    guid: 64de2d8915894c044a6a5d0b6fb8a103
-  - enabled: 1
-    path: Assets/Scenes/Practice/Run'n'Gun.unity
-    guid: 31d4934ed0c5a224091ef1463025e09e
-  - enabled: 1
-    path: Assets/Scenes/Practice/Shop.unity
-    guid: 434175dcba6b7284bb4170debee7f7f2
+    path: Assets/Scenes/Scene(4).unity
+    guid: 903a9652499e9e8498954976afff502f
   m_configObjects: {}

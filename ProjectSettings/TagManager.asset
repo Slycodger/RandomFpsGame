@@ -4,19 +4,20 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
+  - Floor
+  - trig
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Barrier
+  - 
   - Water
   - UI
-  - gun
-  - player
-  - bullet
-  - BulletCollison
-  - Mouse
+  - Gun
+  - Bullet
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -41,7 +42,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: New Layer
-    uniqueID: 2867431041
     locked: 0
